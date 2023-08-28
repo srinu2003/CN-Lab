@@ -5,29 +5,41 @@ void main(){
     scanf("%d",&n);
     printf("Enter %d bits:",n);
     int msg[n];
-    // int m,msg[16] =  {  0,0,0,1,
-    //                     1,0,1,0,
-    //                     1,0,1,0,
-    //                     1,0,0,1 };
-    // int m,msg[16] =  {  0,0,0,1,
-    //                     1,0,1,0,
-    //                     1,0,1,0,
-    //                     1,0,0,1 };
-    // int *ptr = msg;
+
+    int parity = 0,p[4];
     for (int i = 0; i < n; i++)
     {
+        if (i && (!(i & (i - 1))))
+        {
+            msg[i] = 0;
+            continue;
+        }
+        
         scanf("%d",&msg[i]);
-    }
-    
-    int parity = 0;
-    for (int i = 1; i < n; i++)
-    {
         if (msg[i]==1) { parity ^=(i); }
+        // printf("%d\n",parity);
+        // p[parity%4] = 0;
+    }
+    int i =1;
+    while (parity>0)
+    {
+        msg[i] = parity%2;
+        parity /=2;
+        i *=2;
+        printf("%d ",i);
+    }
+    printf("Message block:");
+    for (int j = 0; j < i; j++) 
+    {
+        if (msg[j]==1) { parity ^=(j); } else{msg[i] = 0;}
+        printf(" %d ",msg[j]);
+        // printf("%d\n",parity);
+        // p[parity%4] = 0;
     }
     if (parity==0) {
-        printf("Reciver said \"No Unibit error :)\"");
+        printf("\nReciver said \"No Unibit error :)\"");
     }else {
-        printf("Reciver said \"Error at position: %d!\"",parity);
+        printf("\nReciver said \"Error at position: %d!\"",parity);
     }
 
 }

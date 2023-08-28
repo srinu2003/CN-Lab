@@ -3,17 +3,10 @@ void main(){
     int n;
     printf("Enter no.of bits: ");
     scanf("%d",&n);
-    printf("Enter %d bits:",n);
+    
     int msg[n];
-    // int m,msg[16] =  {  0,0,0,1,
-    //                     1,0,1,0,
-    //                     1,0,1,0,
-    //                     1,0,0,1 };
-    // int m,msg[16] =  {  0,0,0,1,
-    //                     1,0,1,0,
-    //                     1,0,1,0,
-    //                     1,0,0,1 };
-    // int *ptr = msg;
+
+    printf("Enter %d bits:",n);
     for (int i = 0; i < n; i++)
     {
         scanf("%d",&msg[i]);

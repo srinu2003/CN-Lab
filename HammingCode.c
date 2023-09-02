@@ -15,7 +15,6 @@ void main() {
     printf("Enter size of msg block: ");
     scanf("%d",&n);
     n++;
-    // printf("%d",n);
     int *msg = (int*) malloc(n * sizeof(int));
     int parity = 0;
     printf("Enter data bits: ");    
@@ -45,5 +44,6 @@ void main() {
         printf("\nReciver said \"No Unibit error :)\"");
     }else {
         printf("\nReciver said \"Error at position: %d!\"",parity);
+        msg[parity]^=1; //corrects error 0-->1 : 1-->0
     }
 }

@@ -41,9 +41,9 @@ void main() {
         if (msg[i]==1) { parity ^=(i); }
     }
     if (parity==0) {
-        printf("\nReciver said \"No Unibit error :)\"");
+        printf("\nReceiver said \"No Unibit error :)\"");
     }else {
-        printf("\nReciver said \"Error at position: %d!\"",parity);
+        printf("\nReceiver said \"Error at position: %d!\"",parity);
         msg[parity]^=1; //corrects error 0-->1 : 1-->0
     }
 }

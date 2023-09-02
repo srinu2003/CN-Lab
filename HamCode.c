@@ -4,7 +4,7 @@ void main(){
     printf("Enter no.of bits: ");
     scanf("%d",&n);
     
-    int msg[n];
+    int *msg = (int*) malloc(n * sizeof(int));
 
     printf("Enter %d bits:",n);
     for (int i = 0; i < n; i++)
@@ -22,5 +22,4 @@ void main(){
     }else {
         printf("Reciver said \"Error at position: %d!\"",parity);
     }
-
 }

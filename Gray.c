@@ -3,7 +3,7 @@
 void main() {
     unsigned long long bin;
     //Input
-    printf("Enter a gray number: ");
+    printf("Enter a binary code: ");
 
     scanf("%llu", &bin);
     // printf("Binary equivalent: %u\n", bin);

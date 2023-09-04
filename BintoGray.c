@@ -3,6 +3,7 @@
 
 void main() {
     char bin[32], gray[32];
+    printf("Enter a Binary code: ");
     scanf("%s", bin);
     
     gray[0] = bin[0];

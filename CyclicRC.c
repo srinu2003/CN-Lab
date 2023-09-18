@@ -2,8 +2,8 @@
 #include <string.h>
 
 int main() {
-    char message[32]; // Message (32 bits)
-    char divisor[] = "1001"; // CRC divisor
+    char message[32]; 
+    char divisor[] = "1001"; 
 
     printf("Enter a 32-bit message: ");
     scanf("%s", message);
@@ -24,7 +24,6 @@ int main() {
         }
     }
 
-    // Check if the remainder is all zeros
     for (int i = m; i < m + n - 1; i++) {
         if (message[i] == '1') {
             printf("Error detected!\n");

@@ -11,7 +11,7 @@ int main() {
     int m = strlen(message);
     int n = strlen(divisor);
 
-    // Append zeros for CRC
+
     for (int i = 0; i < n - 1; i++) {
         message[m + i] = '0';
     }

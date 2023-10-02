@@ -32,12 +32,10 @@ int main() {
             printf("\n");
             printf("Acknowledgement received.\n");
         } else {
-            // Send the next frame.
             printf("%d ", frames[i]);
         }
 	}
 
-	// If the number of frames to send is not a multiple of the window size, send the remaining frames without waiting for an acknowledgment.
 	if (f % w != 0) {
 	    printf("\nAcknowledgement received.\n");
 	}

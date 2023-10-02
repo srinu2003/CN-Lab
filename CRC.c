@@ -1,52 +1,53 @@
-#include <stdio.h>
-#include <stdbool.h>
-
-// Function to perform CRC error detection
-bool performCRCDetection(int data[], int dataLength, int divisor[], int divisorLength) {
-    // Append zeros to the data
-    int appendedData[dataLength + divisorLength - 1];
-    for (int i = 0; i < dataLength; i++) {
-        appendedData[i] = data[i];
-    }
-    for (int i = dataLength; i < dataLength + divisorLength - 1; i++) {
-        appendedData[i] = 0;
-    }
-
-    // Perform division
-    for (int i = 0; i < dataLength; i++) {
-        if (appendedData[i] == 1) {
-            for (int j = 0; j < divisorLength; j++) {
-                appendedData[i + j] ^= divisor[j];
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+void get_crc(char *msg, char *div,int *m,int *n) {
+    *m = strlen(msg);
+    *n = strlen(div);
+    printf("Message is: %s",msg);
+    for (int i = 0; i < *n - 1; i++) { msg[*m + i] = '0';}
+    for (int i = 0; i < *m; i++) {
+        if (msg[i] == '1') {
+            for (int j = 0; j < *n; j++) {
+            msg[i + j] = (msg[i + j] == div[j]) ? '0' : '1';
             }
         }
     }
-
-    // Check if remainder is zero
-    for (int i = dataLength; i < dataLength + divisorLength - 1; i++) {
-        if (appendedData[i] != 0) {
-            return false;
+    return ;
+}
+void main(){
+    char msg[100],div[10];
+    int n=0,m=0,ch,i,j;
+    printf("1.Generate\n2.Detect\n3.Exit");
+    while(1){
+        printf("\nEnter choice:");
+        scanf("%d",&ch);
+        switch(ch){
+            case 1:/*Generation*/;
+            printf("Enter CRC code: ");
+            scanf("%s",msg);
+            printf("Enter equation Coefficient:");
+            scanf("%s",div);
+            get_crc(msg,div,&m,&n);
+            printf(" ");
+            for (i = m; i < m + n - 1; i++) {
+                printf("%c",msg[i]);
+            }
+            break;
+            case 2:
+            printf("Enter Sender's CRC code: ");
+            scanf("%s",msg);
+            get_crc(msg,div,&m,&n);
+            for (i = m; i < m + n - 1; i++) {
+                if (msg[i] == '1') {
+                    printf("\nError detected!");
+                    break;
+                }
+            }
+            printf("\nNo error detected.");
+            break;
+            case 3:exit(0);
+            default: printf("Invalid Choice! Try again.");
         }
     }
-
-    return true;
-}
-
-int main() {
-    // Example data and divisor
-    int data[] = {1, 0, 1, 0, 0, 1, 0, 1};
-    int dataLength = sizeof(data) / sizeof(data[0]);
-    int divisor[] = {1, 0, 1, 1};
-    int divisorLength = sizeof(divisor) / sizeof(divisor[0]);
-
-    // Perform CRC error detection
-    bool errorDetected = performCRCDetection(data, dataLength, divisor, divisorLength);
-
-    // Print result
-    if (errorDetected) {
-        printf("Error detected!\n");
-    } else {
-        printf("No error detected.\n");
-    }
-
-    return 0;
 }

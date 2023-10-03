@@ -22,7 +22,7 @@ This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2
     2. Go Back-N Protocol
     3. Dijkstra's algorithm for Network Traffic
 + [`Lab-7`](<Lab-7>)
-    1. ???
+    1. Minimum cost Spanning tree for Broadcast tree
 
 <!-- - [`Lab-7`](<Lab-7>)
     1. KnapSack (Greedy)

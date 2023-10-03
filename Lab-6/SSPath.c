@@ -50,6 +50,7 @@ void dijkstra(int graph[V][V], int src) {
 }
 
 int main() {
+    int n;
     int graph[V][V] = {
         {0, 2, 0, 0, 1, 0},
         {2, 0, 4, 0, 3, 0},

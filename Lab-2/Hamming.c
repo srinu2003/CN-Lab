@@ -45,12 +45,12 @@ void Correction(int *msg,int n){
 }
     /**
     * This program reads a non-negative integer to specify size of Messgae block and data bits from user input, ouputs a n-bit hamming code, then reads a sender's message block from user input and checks for unibit errors.
-    * Example Input:
-    * input:(7,4)      1   0 1 0
-    * output:(7,4) 1 0 1 1 0 1 0
-    * input:(15,11)      1   0 1 0   0 1 0 1 0 0 1
-    * output:(15,11) 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1
-    * Reciver said "No Unibit error :)"
+     Example Input:
+     input:(7,4)      1   0 1 0
+     output:(7,4) 1 0 1 1 0 1 0
+     input:(15,11)      1   0 1 0   0 1 0 1 0 0 1
+     output:(15,11) 0 0 1 1 0 1 0 1 0 1 0 1 0 0 1
+     Reciver said "No Unibit error :)"
     */
 void main() {
     printf("1. Generation\n2. Error Detection & Correction\n3. Exit");

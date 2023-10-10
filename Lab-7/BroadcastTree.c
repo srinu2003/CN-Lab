@@ -1,10 +1,10 @@
 #include<stdio.h>
-struct path{
+struct edge{
     int s,d,t; /*s:source, d:destination, t:traffic/travel-time*/
 };
 int main(){
     int n, graph[10][10], node[10] = {0,0,0,0,0,0,0,0,0,0};
-    struct path pathq[100],temp;
+    struct edge edgeq[100],temp;
     printf("Enter no.of nodes:");
     scanf("%d",&n);
     
@@ -18,30 +18,30 @@ int main(){
             } else {
                 graph[i][j] = graph[j][i];
             }
-            pathq[n*i+j].s = i;
-            pathq[n*i+j].d = j;
-            pathq[n*i+j].t = graph[i][j];
-            /* Inserssion Sort: for all the paths */
+            edgeq[n*i+j].s = i;
+            edgeq[n*i+j].d = j;
+            edgeq[n*i+j].t = graph[i][j];
+            /* Inserssion Sort: for all the edges */
             for(int k = n*i+j; k > 0; k--){
-                if(pathq[k].t < pathq[k-1].t){
-                    temp       = pathq[k];
-                    pathq[k]   = pathq[k-1];
-                    pathq[k-1] = temp;
+                if(edgeq[k].t < edgeq[k-1].t){
+                    temp       = edgeq[k];
+                    edgeq[k]   = edgeq[k-1];
+                    edgeq[k-1] = temp;
                 }
             }
         }
     }
-    int dist = 0;
+    int cost = 0;
     printf("\nBroadcast tree:\n");
-    for(int i = n,count = 1; count < n , i < n*n ; i++) { /*First n paths are '-2'*/
-        if (!(node[pathq[i].d]) && pathq[i].t > 0 ) {
-            printf("(%c)-->(%c) = %2d\n",65 + pathq[i].s,65 + pathq[i].d,pathq[i].t);
-            dist += pathq[i].t;
-            node[pathq[i].s] = 1;
-            node[pathq[i].d] = 1;
+    for(int i = n,count = 1; count < n , i < n*n ; i++) { /*First n edges are '-2'*/
+        if (!(node[edgeq[i].d]) && edgeq[i].t > 0 ) {
+            printf("(%c)-->(%c) = %2d\n",65 + edgeq[i].s,65 + edgeq[i].d,edgeq[i].t);
+            cost += edgeq[i].t;
+            node[edgeq[i].s] = 1;
+            node[edgeq[i].d] = 1;
             count++;
         }
     }
-    printf("Total distsnce: %d",dist);
+    printf("Total distsnce: %d",cost);
     return 0;
 }

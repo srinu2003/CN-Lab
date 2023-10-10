@@ -3,12 +3,19 @@
 
 ```
 wget https://github.com/git/git/archive/refs/tags/v2.42.0.tar.gz
-tar -zxf git-2.42.0.tar.gz
+tar -zxf v2.42.0.tar.gz
 cd git-2.42.0
 make configure
 ./configure --prefix=/usr
+git config --global user.name "srinu2003"
+git config --global user.emal "tsrin2003@gmail.com"
+```
+```
 make all doc info
 sudo make install install-doc install-html install-info
+```
+```
+git clone https://git.kernel.org/pub/scm/git/git.git
 ```
 This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2003/CN-Lab) course.
 

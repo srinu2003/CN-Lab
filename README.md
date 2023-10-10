@@ -52,3 +52,6 @@ This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2
 This repository is licensed under the MLRITM License.
 I hope this is helpful! Let me know if you have any other questions. -->
 
+```
+wget https://github.com/git/git/archive/refs/tags/v2.42.0.tar.gz
+```

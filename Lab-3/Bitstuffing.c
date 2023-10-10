@@ -12,10 +12,10 @@ int main() {
     for(i = 0; i < n; ++i) {
         scanf("%d",&num[i]);
     }
-    for ( i = 0, j = 0, count = 1; i < n; i++, j++) {
+    for ( i = 0, j = 0; i < n; i++, j++) {
         cp[j]=num[i];
         if(num[i]==1) {
-            for(k = i + 1; num[k] == 1 && k < n && count < 5; k++,i++) {
+            for(k = i + 1, count = 1; num[k] == 1 && k < n && count < 5; k++,i++) {
                 cp[++j] = num[k];
                 if(++count == 5) {
                     cp[++j] = 0;

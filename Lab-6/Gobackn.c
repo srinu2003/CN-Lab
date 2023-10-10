@@ -5,12 +5,12 @@ int main() {
 	scanf("%d",&ws);
 	while(1) {
 		for( sent = ack+1; sent < ws; sent++) {
-				printf("Frame %d has been transmitted.\n",sent);
-			}
-			printf("\nPlease enter last Acknowledgement received: ");
-			scanf("%d",&ack);
+			printf("Frame %d has been transmitted.\n",sent);
+		}
+		printf("\nPlease enter last Acknowledgement received: ");
+		scanf("%d",&ack);
 
-			if(ack == ws-1) break;
+		if(ack == ws-1) break;
 	}
     return 0;
 }

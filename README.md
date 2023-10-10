@@ -1,6 +1,15 @@
 # COMPUTER NETWORKS LAB EXPERIEMENTS
 ![C-Programming](https://img.shields.io/badge/C-programming.svg) ![GCC](https://img.shields.io/badge/GCC-6.3.0-1.svg) 
 
+```
+wget https://github.com/git/git/archive/refs/tags/v2.42.0.tar.gz
+tar -zxf git-2.42.0.tar.gz
+cd git-2.42.0
+make configure
+./configure --prefix=/usr
+make all doc info
+sudo make install install-doc install-html install-info
+```
 This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2003/CN-Lab) course.
 
 ## Contents 
@@ -52,6 +61,3 @@ This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2
 This repository is licensed under the MLRITM License.
 I hope this is helpful! Let me know if you have any other questions. -->
 
-```
-wget https://github.com/git/git/archive/refs/tags/v2.42.0.tar.gz
-```

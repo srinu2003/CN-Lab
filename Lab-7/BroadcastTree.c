@@ -34,16 +34,6 @@ int main(){
             }
         }
     }
-    printf("Entered Graph:\n ");
-    for(int i = 0; i < n;i++){
-        printf("  %c",65+i);
-    }
-    for(int i = 0; i<n;i++){
-        printf("\n%c ",65+i);
-        for(int j = 0; j < n;j++){
-            printf("%2d",graph[i][j]);
-        }
-    }
     int dist = 0;
     printf("\nBroadcast tree:\n");
     for(int i = n,count = 1; count <= n , i < n*n ; i++) { /*First n paths are '-1'*/
@@ -58,10 +48,3 @@ int main(){
     printf("Total distsnce: %d",dist);
     return 0;
 }
-// * 1 0 4 3 0
-// 1 * 0 4 2 0
-// 0 0 * 0 4 5
-// 4 4 0 * 4 0 
-// 3 2 4 4 * 7
-// 0 0 5 0 0 *
-// 1 0 4 3 0 0 4 2 0 0 4 5 4 0 7

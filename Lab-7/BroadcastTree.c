@@ -3,14 +3,11 @@ struct path{
     int s,d,t; /*s:source, d:destination, t:traffic/travel-time*/
 };
 int main(){
-    int n;
+    int n, graph[10][10], node[10] = {0,0,0,0,0,0,0,0,0,0};
+    struct path pathq[100],temp;
     printf("Enter no.of nodes:");
     scanf("%d",&n);
-
-    int graph[10][10],node[10] = {0,0,0,0,0,0,0,0,0,0};
-    struct path pathq[100],temp;
-
-
+    
     for (int i = 0; i<n;i++){
         for(int j = 0; j < n;j++){
             if (i<j) {

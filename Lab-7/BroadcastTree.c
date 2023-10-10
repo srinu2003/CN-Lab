@@ -36,7 +36,7 @@ int main(){
     }
     int dist = 0;
     printf("\nBroadcast tree:\n");
-    for(int i = n,count = 1; count <= n , i < n*n ; i++) { /*First n paths are '-2'*/
+    for(int i = n,count = 1; count < n , i < n*n ; i++) { /*First n paths are '-2'*/
         if (!(node[pathq[i].d]) && pathq[i].t > 0 ) {
             printf("(%c)-->(%c) = %2d\n",65 + pathq[i].s,65 + pathq[i].d,pathq[i].t);
             dist += pathq[i].t;

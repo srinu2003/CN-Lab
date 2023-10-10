@@ -27,6 +27,6 @@ int main(){
         }
         if(f%w != 0){
                 printf("\nAcknowledgement recieved\n");
-        }
+        }free(frames);
         return 0;
 }

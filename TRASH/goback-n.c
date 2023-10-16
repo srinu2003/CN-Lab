@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 
 #define N 10 // Window size
 
@@ -78,5 +79,12 @@ int main() {
     // These will run forever until manually terminated.
     // You can use threading or process management libraries as needed.
     
+    // Seed the random number generator
+    srand(time(NULL));
+
+    // Start the sender and receiver functions
+    sender();
+    receiver();
+
     return 0;
 }

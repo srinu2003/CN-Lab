@@ -30,10 +30,9 @@ int main() {
             printf("Invalied inputs.");
             return 1;
     } printf("GoBack-%d ARQ:\n",N);
-    for (int frame = 0; frame < frame_size;) {
+    for (int frame = 0,ack = -1; ack < frame_size;) {
 
-        for ( Sn = Sb; Sn < Sm; Sn++) 
-        {
+        for ( Sn = Sb; Sn < Sm; Sn++) {
             printf("\n%2d. Frame %2d is send.",count,Sn);
         }
     }

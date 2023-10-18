@@ -15,12 +15,12 @@ int Sm = N + 1;   // Sequence max
 bool receivePacket(int packetRn, bool isErrorFree) {
     if (packetRn == Rn && isErrorFree) {
         // Accept the packet and send it to a higher layer
-        printf("Received packet with Rn=%d (Accepted)\n", Rn);
+        printf("Received packet with Rn = %d (Accepted)\n", Rn);
         Rn++;
         return true;
     } else {
         // Refuse the packet
-        printf("Received packet with Rn=%d (Refused)\n", packetRn);
+        printf("Received packet with Rn = %d (Refused)\n", packetRn);
         return false;
     }
 }

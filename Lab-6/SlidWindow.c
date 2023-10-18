@@ -7,7 +7,7 @@ int main(){
         printf("Enter no.of frames:");
         scanf("%d",&f);
         frames = (int*)malloc(f * sizeof(int));
-        if(w <= 0 || f <= 0){
+        if(w <= 0 || f <= 0){ 
                 printf("Invalied inputs.");
                 return 1;
         }

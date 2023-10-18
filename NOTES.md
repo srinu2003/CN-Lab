@@ -48,7 +48,7 @@ function receiver is
             Rn := Rn + 1
         else
             Refuse packet
-        Send a Request for Rn : ack = Rn - 1 i.e. -1
+        Send a Request for Rn : ack = Rn - 1 i.e. ack+1
 
 
 function sender is

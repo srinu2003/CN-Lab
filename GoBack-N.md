@@ -155,14 +155,12 @@ void main(){
     
     printf("Enter size of frame: ");
     scanf("%d",&frameSize); 
-    
     printf("Enter sliding window size: ");
     scanf("%d",&windowSize);
-    
     printf("Enter which nth frame is courrupted: ");
     scanf("%d",&n);
-    
     printf("GoBack-%d ARQ:\n",windowSize);
+
     if(windowSize <= 0 || frameSize < windowSize || n < 1) {
         printf("Invalied inputs.");
         return;

@@ -20,7 +20,7 @@ int main() {
     if(N <= 0 || frame_size < N || n < 1) {
             printf("Invalied inputs.");
             return 1;
-    } printf("GoBack-%d ARQ:\n",N);
+    } printf("\nGoBack-%d ARQ:",N);
 
     for (int ack = -1; ack < frame_size - 1; printf(" //timeout")) 
     {
@@ -28,7 +28,7 @@ int main() {
             count++; /*frame sent*/
             ack = (count%n == 0)? ack : (Sn == Sb)? Sn : ack;
 
-            printf("\n%2d. Frame %2d is send. Ack:%2d",count,Sn,ack);
+            printf("\n%2d. Frame %2d is send. Ack:%2d",count,Sn+1,ack+1);
             
             Sm = (ack + (Sm - Sb + 1) >= frame_size)? frame_size : ack + (Sm - Sb + 1);
             Sb = ack + 1;

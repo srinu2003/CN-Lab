@@ -27,7 +27,6 @@ void main()
         
             printf("\n");
         }
-        
     }
     
 }

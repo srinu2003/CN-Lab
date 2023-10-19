@@ -150,8 +150,7 @@ Thanks to [@chakradharlucky](https://github.com/chakradharlucky) for supprting t
 ### program:
 ```c
 #include<stdio.h>
-void main()
-{
+void main(){
     int frameSize, windowSize, n, seqMax, seqNext, count = 0, flg = 0, ack = 0;
     
     printf("Enter size of frame: ");
@@ -168,15 +167,12 @@ void main()
         printf("Invalied inputs.");
         return;
     }
-    while(ack<frameSize)
-    {
+    while(ack<frameSize) {
         seqMax = frameSize;
         flg = 0;
-        for( seqNext = ack + 1 ; (seqNext <= seqMax) && (seqNext <= frameSize) ; seqNext++)
-        {
+        for( seqNext = ack + 1 ; (seqNext <= seqMax) && (seqNext <= frameSize) ; seqNext++) {
             count++;
-            if((count%n==0) && (flg == 0))
-            {
+            if((count%n==0) && (flg == 0)) {
                 flg = 1;
                 seqMax = seqNext + windowSize - 1;
             }

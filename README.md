@@ -8,7 +8,7 @@ cd git-2.42.0
 make configure
 ./configure --prefix=/usr
 git config --global user.name "srinu2003"
-git config --global user.emal "tsrin2003@gmail.com"
+git config --global user.email "tsrin2003@gmail.com"
 ```
 ```
 make all doc info

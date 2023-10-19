@@ -184,7 +184,13 @@ void main(){
     }
 }
 ```
+
+<div style="page-break-after: always; visibility: hidden"></div>
+<!-- <div style="page-break-after: always; visibility: hidden">\pagebreak</div> -->
+
 ### Output
+
+
 ```
 ..\CN-Lab\Lab-6> cc 513GoBack-N.c -std=c99
 ..\CN-Lab\Lab-6> ./a.out

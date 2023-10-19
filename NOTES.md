@@ -69,7 +69,7 @@ int N  = 10;      // Window size
 int Rn = 0;       // Request number `Rn = Ack + 1`
 int Sn = 0;       // `[Sb:Sm)` Sequence number  [0 1 2 3 4 5]
 int Sb = 0;       // `Sb = 0`Sequence base      (0)1 2 3 4 5
-int Sm = 11;      // `Sb = N + 1` Sequence max   0 1 2 3 4 5 (6)
+int Sm = 11;      // `Sm = N + 1` Sequence max   0 1 2 3 4 5 (6)
 
 int main() {
     int count = 0,n;
@@ -77,7 +77,7 @@ int main() {
     scanf("%d",&frame_size); //6
     printf("Enter sliding window size:");
     scanf("%d",&N); //5
-    Sm = N;
+    Sm = N; //0 --> (N-1) + 1
     printf("Enter which nth frame is courrupted: ");
     scanf("%d",&n); //3
 

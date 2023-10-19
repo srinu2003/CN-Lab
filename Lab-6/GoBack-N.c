@@ -24,7 +24,7 @@ int main() {
 
     for (int ack = -1; ack < frame_size - 1; printf(" //timeout")) 
     {
-        for ( Sn = Sb = 0; Sn < Sm ; Sn++) {
+        for ( Sn = Sb; Sn < Sm ; Sn++) {
             count++; /*frame sent*/
             ack = (count%n == 0)? ack : (Sn == Sb)? Sn : ack;
 

@@ -24,7 +24,7 @@ sending the message to B?
     n = 3
 
 
-|S.No|Frame                      |ack = Rn - 1|
+|S.No|Frame                      |  Ack(Rn-1) |
 |---:|:--------------------------|-----------:|
 |1.  | frame 1 sent              |  1         |
 |2.  | frame 2 sent              |  2         |
@@ -84,7 +84,7 @@ int main() {
     int count = 0,n;
     printf("Enter size of frame: ");
     scanf("%d",&frame_size); //6
-    printf("Enter sliding window size:");
+    printf("Enter sliding window size: ");
     scanf("%d",&N); //5
     Sm = N; //0 --> (N-1) + 1
     printf("Enter which nth frame is courrupted: ");
@@ -102,11 +102,11 @@ int main() {
             ack = (count%n == 0)? ack : (Sn == Sb)? Sn : ack;
 
             printf("\n%2d. Frame %2d is send. Ack:%2d",count,Sn,ack);
-            // ack = (count%n == 0)? ack,printf("Ack:%2d (courrupted)",ack) : (Sn == Sb)? Sn,printf("Ack:%2d //timeout",ack) : ack,printf("Ack:%2d",ack);
-            // printf(" [%2d(%2d)%2d:%2d]",Sb,Sn,Sm,ack);
+                // ack = (count%n == 0)? ack,printf(" (courrupted)") : (Sn == Sb)? Sn,printf(" //timeout") : ack;
+                // printf(" [%2d(%2d)%2d:%2d]",Sb,Sn,Sm,ack);
             Sm = (ack + (Sm - Sb + 1) >= frame_size)? frame_size : ack + (Sm - Sb + 1);
             Sb = ack + 1;
-            // printf(" --> [%2d(%2d)%2d:%2d]",Sb,Sn+1,Sm,ack);
+                // printf(" --> [%2d(%2d)%2d:%2d]",Sb,Sn+1,Sm,ack);
             if (count%n == 0){
                 printf(" (courrupted!)");
             }
@@ -121,7 +121,7 @@ int main() {
 ..\CN-Lab\Lab-6> ./a.out
 
 Enter size of frame: 6
-Enter sliding window size:5
+Enter sliding window size: 5
 Enter which nth frame is courrupted: 3
 
 GoBack-5 ARQ:

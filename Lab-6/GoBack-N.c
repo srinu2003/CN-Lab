@@ -11,7 +11,7 @@ int main() {
     int count = 0,n;
     printf("Enter size of frame: ");
     scanf("%d",&frame_size);
-    printf("Enter sliding window size:");
+    printf("Enter sliding window size: ");
     scanf("%d",&N);
     Sm = N;
     printf("Enter which nth frame is courrupted: ");

@@ -41,7 +41,7 @@ sending the message to B?
 |13. | frame 6 sent `(timeout)`  |  6         |
 
 
-## program:
+### program:
 
 ```c
 #include <stdio.h>
@@ -142,9 +142,81 @@ GoBack-5 ARQ:
 ```
 
 ## Another Aproch
+
 Thanks to [@chakradharlucky](https://github.com/chakradharlucky) for supprting to the program 🤝.
 
 [`</code>:`513GobackN.c](Lab-6/513GobackN.c)
+
+### program:
 ```c
 #include<stdio.h>
+void main()
+{
+    int frameSize, windowSize, n, seqMax, seqNext, count = 0, flg = 0, ack = 0;
+    
+    printf("Enter size of frame: ");
+    scanf("%d",&frameSize); 
+    
+    printf("Enter sliding window size: ");
+    scanf("%d",&windowSize);
+    
+    printf("Enter which nth frame is courrupted: ");
+    scanf("%d",&n);
+    
+    printf("GoBack-%d ARQ:\n",windowSize);
+    if(windowSize <= 0 || frameSize < windowSize || n < 1) {
+        printf("Invalied inputs.");
+        return;
+    }
+    while(ack<frameSize)
+    {
+        seqMax = frameSize;
+        flg = 0;
+        for( seqNext = ack + 1 ; (seqNext <= seqMax) && (seqNext <= frameSize) ; seqNext++)
+        {
+            count++;
+            if((count%n==0) && (flg == 0))
+            {
+                flg = 1;
+                seqMax = seqNext + windowSize - 1;
+            }
+            if(flg == 0)
+                ack++;
+            
+            printf("\n%2d. Frame %2d is send. Ack:%2d",count,seqNext,ack);
+            if(count%n==0)
+                printf(" (courrupted!)");
+        }
+    }
+}
+```
+### Output
+```
+..\CN-Lab\Lab-6> cc 513GoBack-N.c -std=c99
+..\CN-Lab\Lab-6> ./a.out
+
+Enter size of frame: 10
+Enter sliding window size: 3
+Enter which nth frame is courrupted: 5
+GoBack-3 ARQ:
+
+ 1. Frame  1 is send. Ack: 1
+ 2. Frame  2 is send. Ack: 2
+ 3. Frame  3 is send. Ack: 3
+ 4. Frame  4 is send. Ack: 4
+ 5. Frame  5 is send. Ack: 4 (courrupted!)
+ 6. Frame  6 is send. Ack: 4
+ 7. Frame  7 is send. Ack: 4
+ 8. Frame  5 is send. Ack: 5
+ 9. Frame  6 is send. Ack: 6
+10. Frame  7 is send. Ack: 6 (courrupted!)
+11. Frame  8 is send. Ack: 6
+12. Frame  9 is send. Ack: 6
+13. Frame  7 is send. Ack: 7
+14. Frame  8 is send. Ack: 8
+15. Frame  9 is send. Ack: 8 (courrupted!)
+16. Frame 10 is send. Ack: 8
+17. Frame  9 is send. Ack: 9
+18. Frame 10 is send. Ack:10
+..\CN-Lab\Lab-6> ./a.out
 ```

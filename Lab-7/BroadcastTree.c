@@ -4,7 +4,7 @@ struct edge{
 };
 int main(){
     int n, graph[10][10], node[10] = {0,0,0,0,0,0,0,0,0,0};
-    struct edge edgeq[100],temp;
+    struct edge edgeq[100],temp; /*An Edges Queue 'edgeq' for storing sorted-paths*/
     printf("Enter no.of nodes:");
     scanf("%d",&n);
     

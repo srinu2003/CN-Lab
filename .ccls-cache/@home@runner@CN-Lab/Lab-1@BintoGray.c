@@ -14,4 +14,5 @@ int main() {
     
     printf("Gray code equivalent: %s\n", gray);
     return 0;
+    
 }

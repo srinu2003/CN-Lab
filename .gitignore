@@ -1,3 +1,4 @@
+*.out
 *replit*
 *.ccls-cache
 *.exe

@@ -53,7 +53,7 @@ void Correction(int *msg,int n){
      Reciver said "No Unibit error :)"
     */
 void main() {
-    printf("1. Generation\n2. Error Detection & Correction\n3. Exit");
+    printf("1. Generation\n2. Error Detection & Correction\n3. Exit\n");
     int ch, n, *msg;
         createmsg(&msg,&n);
     while(1){

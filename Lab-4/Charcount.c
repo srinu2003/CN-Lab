@@ -13,7 +13,7 @@ void main()
         if (i != 0)
         {
             printf("Frame%d: ", i);
-            scanf("%s", &data[i]);
+            scanf("%s", data[i]);
         }
     }
     for (i = 0; i <= n; i++)

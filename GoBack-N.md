@@ -24,21 +24,21 @@ sending the message to B?
     n = 3
 
 
-|S.No|Frame                      |  Ack(Rn-1) |
-|---:|:--------------------------|-----------:|
-|1.  | frame 1 sent              |  1         |
-|2.  | frame 2 sent              |  2         |
-|3.  | frame 3 sent (courrupted) |  2         |
-|4.  | frame 4 sent              |  2         |
-|5.  | frame 5 sent              |  2         |
-|6.  | frame 6 sent (courrupted) |  2         |
-|7.  | frame 3 sent `(timeout)`  |  3         |
-|8.  | frame 4 sent              |  4         |
-|9.  | frame 5 sent (courrupted) |  4         |
-|10. | frame 6 sent              |  4         |
-|11. | frame 5 sent `(timeout)`  |  5         |
-|12. | frame 6 sent (courrupted) |  5         |
-|13. | frame 6 sent `(timeout)`  |  6         |
+|S.No|Frame                      | Ack(Rn-1) |
+|---:|:--------------------------|----------:|
+|1.  | frame 1 sent              | 1         |
+|2.  | frame 2 sent              | 2         |
+|3.  | frame 3 sent (courrupted) | 2         |
+|4.  | frame 4 sent              | 2         |
+|5.  | frame 5 sent              | 2         |
+|6.  | frame 6 sent (courrupted) | 2         |
+|7.  | frame 3 sent `(timeout)`  | 3         |
+|8.  | frame 4 sent              | 4         |
+|9.  | frame 5 sent (courrupted) | 4         |
+|10. | frame 6 sent              | 4         |
+|11. | frame 5 sent `(timeout)`  | 5         |
+|12. | frame 6 sent (courrupted) | 5         |
+|13. | frame 6 sent `(timeout)`  | 6         |
 
 
 ### program:

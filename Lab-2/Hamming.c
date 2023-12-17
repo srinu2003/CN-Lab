@@ -37,7 +37,7 @@ void Correction(int *msg,int n){
     }else {
         printf("\nReceiver said \"Error at position: %d!\"",parity);
         msg[parity]^=1; /*corrects error 0-->1 : 1-->0 */
-        printf("After Correction: ");
+        printf("\nAfter Correction: ");
         for (int i = 1; i < n; i++) {
             printf("%d ",msg[i]);
         }

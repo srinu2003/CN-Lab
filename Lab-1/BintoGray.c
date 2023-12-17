@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-void main() {
+int main() {
     char bin[32], gray[32];
     printf("Enter a Binary code: ");
-    scanf("%s", bin);
+    int s = scanf("%s", bin);
     
     gray[0] = bin[0];
     for (int i = 1; bin[i]; i++)
@@ -13,4 +13,5 @@ void main() {
     gray[strlen(bin)] = '\0';
     
     printf("Gray code equivalent: %s\n", gray);
+    return 0;
 }

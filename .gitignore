@@ -1,3 +1,6 @@
+*.out
+*replit*
+*.ccls-cache
 *.exe
 *.pdf
 rough*

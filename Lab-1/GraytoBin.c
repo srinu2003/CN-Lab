@@ -4,7 +4,7 @@
 void main() {
     char gray[32], bin[32];
     printf("Enter a Gray code: ");
-    scanf("%s", gray);
+    int sc = scanf("%s", gray);
     int len = strlen(gray),i;
     
     bin[0] = gray[0];

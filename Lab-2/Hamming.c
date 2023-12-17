@@ -4,7 +4,7 @@ int parity=0;
 void createmsg(int **msg,int *n){
     free(*msg);
     printf("Enter size of msg block: ");
-    scanf("%d",n);
+    int sc = scanf("%d",n);
     (*n)++;
     *msg = (int*)malloc(*n * sizeof(int));
 }
@@ -13,11 +13,11 @@ void Generate(int *msg,int n){
     msg[0]=0;
     for (int i = 0; i < n; i++) {
         if (i & (i - 1)) {
-            scanf("%d",&msg[i]);
+            int sc = scanf("%d",&msg[i]);
             if (msg[i]==1) { parity ^=(i); }
         }
     }
-    printf("Message block: ");
+    printf("Message   block: ");
     for (int i = 1; i < n; i++) {
         if (!(i & (i - 1))){
             msg[i]=parity & 1;
@@ -29,7 +29,7 @@ void Generate(int *msg,int n){
 void Correction(int *msg,int n){
     printf("Enter senders msg block: ");
     for (int i = 1; i < n; i++) {
-        scanf("%d",&msg[i]);
+        int sc = scanf("%d",&msg[i]);
         if (msg[i]==1) { parity ^=(i); }
     }
     if (parity==0) {
@@ -59,7 +59,7 @@ void main() {
     while(1){
         parity=0;
         printf("\nEnter choice: ");
-        scanf("%d",&ch);
+        int sc = scanf("%d",&ch);
         switch (ch)
         {
         case 1: /*Code Generation */

@@ -7,12 +7,12 @@ void main()
     int choice;
     while (1)
     {
-        printf("\n\n 1.Character stuffing");
+        printf("\n 1.Character stuffing");
         printf("\n 2.Exit");
         printf("\n Enter choice: ");
         scanf("%d", &choice);
         if (choice > 2)
-            printf("\n\n invalid option...please re-enter");
+            printf("\n invalid option...please re-enter");
         switch (choice)
         {
         case 1:

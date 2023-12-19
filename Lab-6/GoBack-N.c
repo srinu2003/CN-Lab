@@ -35,7 +35,7 @@ int main() {
             if (count%n == 0)
             { printf(" (courrupted!)"); }
         }
-    }
+    }printf("\n");
     return 0;
 }
 /*

@@ -8,7 +8,7 @@ int main() {
     int Sn = 0;       /* `[Sb:Sm)` Sequence number  [0 1 2 3 4 5] 6  */
     int Sb = 0;       /* `Sb = 0`Sequence base      (0)1 2 3 4 5     */
     int Sm = 11;      /* `Sm = N + 1` Sequence max   0 1 2 3 4 5 (6) */
-    int count = 0,n;
+    unsigned int count = 0,n = -1;
     printf("Enter size of frame: ");
     scanf("%d",&frame_size);
     printf("Enter sliding window size: ");

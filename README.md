@@ -21,6 +21,8 @@ git clone https://git.kernel.org/pub/scm/git/git.git
 ```
 This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2003/CN-Lab) course.
 
+[CN LAB](CNLAB.pdf) `|||` [CN Cisco Packet Tracer](CNCISCO.pdf)
+
 ## Contents 
 ### MID-1
 - [`Lab-1`](<Lab-1>)

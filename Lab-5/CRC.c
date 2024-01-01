@@ -4,7 +4,7 @@
 void get_crc(char *msg, char *div,int *m,int *n) {
     *m = strlen(msg);
     *n = strlen(div);
-    printf("Message is: %s",msg);
+    printf("CRC code is: %s",msg);
     for (int i = 0; i < *n - 1; i++) { msg[*m + i] = '0';}
     for (int i = 0; i < *m; i++) {
         if (msg[i] == '1') {
@@ -24,7 +24,7 @@ void main(){
         scanf("%d",&ch);
         switch(ch){
             case 1:/*Generation*/;
-            printf("Enter CRC code: ");
+            printf("Enter Message: ");
             scanf("%s",msg);
             printf("Enter equation Coefficient:");
             scanf("%s",div);

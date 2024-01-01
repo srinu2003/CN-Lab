@@ -23,6 +23,9 @@ This repository contains C programs for the [`CN-Lab`](https://github.com/srinu2
 
 [CN LAB](CNLAB.pdf) `|||` [CN Cisco Packet Tracer](CNCISCO.pdf)
 
+<embed src="CNCISCO.pdf" type="application/pdf" width="100%" height="600px" />
+<embed src="CNLAB.pdf" type="application/pdf" width="100%" height="600px" />
+
 ## Contents 
 ### MID-1
 - [`Lab-1`](<Lab-1>)

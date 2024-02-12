@@ -9,8 +9,8 @@ make configure
 ./configure --prefix=/usr
 ```
 ```
-git config --global user.name "srinu2003"
-git config --global user.email "tsrin2003@gmail.com"
+git config user.name "srinu2003"
+git config user.email "tsrin2003@gmail.com"
 ```
 ```
 make all doc info
